@@ -40,3 +40,4 @@ else:
     print("Incorrect!")
 
 print("You got " + str(score) + " questions correct!")
+print("You got " + str((score / 4) * 100) + " % correct!") # The number 4 is there because there are 4 questions. (score / amount of questions) * 100 = how big of a % you have guessed correctly.
