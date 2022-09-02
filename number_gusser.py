@@ -14,8 +14,10 @@ else:
     quit()
 
 random_number = random.randint(0, top_of_range) 
+guesses = 0
 
 while True: # This loop will run while the code indented into it is True. You do not have to use True or False as the condition for the while loop
+    guesses += 1
     user_guess = input("Make a guess: ") 
     if user_guess.isdigit(): # .isdigit checks wheter or not the string that the user types in is a number, digit, and if so it will activate the if function.
         user_guess = int(user_guess) # Here we are converting the string that we get from the user to a number. If the user types in "25", the int function will turn it into 25. int("25). But if the user types in text like "hello", the int will return error.
@@ -26,10 +28,13 @@ while True: # This loop will run while the code indented into it is True. You do
     # If the user guesses correct the loop will break, else it will contiune running till the user gets it correct.
     if user_guess == random_number:
         print("You got it!")
-        break # Will stop the loop once the line has been run
+        break # Will stop the loop once the line has been run   
+    elif user_guess > random_number: # If the number that the user types in is not equal to the random number, the code will check if the number that the user types in is greater than the random number, they will be told so. And if the number that the user types in is below the random number, they will be told so.
+        print ("You were above the number!")
     else:
-        print("You got it wrong!")
+        print("You were below the number!")
 
+print("You got it in", guesses, "guesses.")
     
     
     
