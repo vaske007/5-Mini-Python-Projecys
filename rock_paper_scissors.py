@@ -17,7 +17,26 @@ while True:
 
     random_number = random.randint(0, 2)
     # rock: 0, paper: 1, scissors: 2
+    computer_pick = options[random_number] # The computer picks a random index.
+    print("The computer picked", computer_pick + ".") # The reason that we are putting a plus instead of a comma, is because the comma would automaticly add a space
+
+    if user_input == "rock" and computer_pick == "scissors": # The and statement is checking if the condition on the left side and the condition on the right side are true
+        print("You won!")
+        user_wins += 1
+
+    elif user_input == "paper" and computer_pick == "rock": 
+        print("You won!")
+        user_wins += 1
+    
+    elif user_input == "scissors" and computer_pick == "paper": 
+        print("You won!")
+        user_wins += 1
+    
+    else:
+        print("You lost!")
+        computer_wins += 1
 
 
-
+print("You won", user_wins, "times.")
+print("The computer won", computer_wins, "times.")
 print("Goodbye")
